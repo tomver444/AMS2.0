@@ -1,0 +1,979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Users\Administrator\Desktop\birchridge\AMS 2017\AMS.exe-->
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D4821E42-6B02-464B-B499-A95C8A878243}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>AMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>AMS</RootNamespace>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <LangVersion>8.0</LangVersion>
+    <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Design, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.TemplateEngine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ClientDoc, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommLayer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonControls, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CommonObjectModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Controllers, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.CubeDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.DataSetConversion, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64" />
+    <Reference Include="CrystalDecisions.ReportAppServer.ObjectFactory, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.Prompting, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.ReportDefModel, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportAppServer.XmlSerialize, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.VSDesigner, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=AMD64" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.1.68.0\lib\net462\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Auth.1.68.0\lib\net462\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.68.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Core.1.68.0\lib\net462\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Sheets.v4, Version=1.68.0.3547, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>packages\Google.Apis.Sheets.v4.1.68.0.3547\lib\net462\Google.Apis.Sheets.v4.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.CodeDom, Version=7.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.CodeDom.7.0.0\lib\net462\System.CodeDom.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SQLite, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\lib\net46\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.EF6, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.EF6.1.0.119.0\lib\net46\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq, Version=1.0.119.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+      <HintPath>packages\System.Data.SQLite.Linq.1.0.119.0\lib\net46\System.Data.SQLite.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="vjslib">
+      <HintPath>lib\vjslib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Form_IssueGuestCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GSheet.cs" />
+    <Compile Include="unlockdoorbyroomno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedunlockdoorbyroomno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reservationlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedreservationlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="gsales_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgsales_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gbonus_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgbonus_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_SystemSettingDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_StaffDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RoomTypebwr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Roombwr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RmStatusbwr.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LoginDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_IRoomSetupDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_GuestBrowserDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CreateZoneDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dguestissued.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cacheddguestissued.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Building_DB1.cs" />
+    <Compile Include="ADMIN_ReportClass_BONUSCLAIMED_room.cs" />
+    <Compile Include="accsalesroom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccsalesroom.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AccGracePeriodList_ReportClass.cs" />
+    <Compile Include="UnLockDoorHistory_ReportClass.cs" />
+    <Compile Include="SystemDataSet.cs" />
+    <Compile Include="ReportClass_LogInOut_Mlog.cs" />
+    <Compile Include="receipt1_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedreceipt1_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MLOG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CachedMLOG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="guestissuedbyfloorno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedguestissuedbyfloorno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gsalesroom_MTD_Nov06_mod.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgsalesroom_MTD_Nov06_mod.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_TransactionReportDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RoomStatusDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_OperationDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_GuestDetailDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelCard_ReportClass.cs" />
+    <Compile Include="accmailinglist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccmailinglist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mod_UpdateData.cs" />
+    <Compile Include="System_DB.cs" />
+    <Compile Include="summary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedsummary.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StayingGuest_ByCurrentGByFloorNo_ReportClass.cs" />
+    <Compile Include="Card_Type_Code.cs" />
+    <Compile Include="CardTypeString.cs" />
+    <Compile Include="SmartCard_Procedures.cs" />
+    <Compile Include="Win32_CardReader.cs" />
+    <Compile Include="RecycleCard_ReportClass.cs" />
+    <Compile Include="LossCard_ReportClass.cs" />
+    <Compile Include="Issue_Card_Class.cs" />
+    <Compile Include="gsales_shl2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgsales_shl2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gsalesroom_shl2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgsalesroom_shl2.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_AdminDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="extra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedextra.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN_ReportClass_GSALES_MONTHLY_gsale2_mtd.cs" />
+    <Compile Include="accgraceperiodlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccgraceperiodlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportClass_Receipt_Reservation.cs" />
+    <Compile Include="Form_CancelReservationDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AvailableRoomsDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExtraCard_ReportClass.cs" />
+    <Compile Include="ADMIN_ReportClass_GSALES_MONTHLY_gsale2_shl.cs" />
+    <Compile Include="ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportClass_GuestHistory.cs" />
+    <Compile Include="ReportClass_DetailGuestIssued.cs" />
+    <Compile Include="Form_ViewGuestTransDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_RoomTypeDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ReadGuestCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_EditDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BankingDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="currentgbyfloorno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedcurrentgbyfloorno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AccGuestList_ReportClass.cs" />
+    <Compile Include="AccessCard.cs" />
+    <Compile Include="TempDataSet.cs" />
+    <Compile Include="paymentnote.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedpaymentnote.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ModDoorLockSystem_Object.cs" />
+    <Compile Include="gsales_MTD_Nov06.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgsales_MTD_Nov06.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_SearchReportDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MRoomsSetupDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_LogReportDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_IssueCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ChangePasswordDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErradjustDBDataSet.cs" />
+    <Compile Include="BankingDBDataSet.cs" />
+    <Compile Include="ADMIN_ReportClass_GuestTRANSACTIONS_MONTHLY.cs" />
+    <Compile Include="ADMIN_ReportClass_GSALES_YEARLY_SUMMARY.cs" />
+    <Compile Include="ADMIN_ReportClass_Extra.cs" />
+    <Compile Include="ADMIN_ReportClass_ErrRec.cs" />
+    <Compile Include="accerrrec.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccerrrec.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportClass_RoomInformation.cs" />
+    <Compile Include="ReportClass_GuestIssuedByFloorNo.cs" />
+    <Compile Include="ReportClass_Dummy.cs" />
+    <Compile Include="guestissuedbyguestid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedguestissuedbyguestid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gcheckout_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgcheckout_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_OtherReportsDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CreateRoomDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Building_Setting_SHL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkoutreceipt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedcheckoutreceipt.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CancelWoCard_ReportClass.cs" />
+    <Compile Include="ADMIN_ReportClass_GSALES_MONTHLY_gsalesroom2_mtd.cs" />
+    <Compile Include="accguestrecorddate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccguestrecorddate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_SHL_ViewRoomReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="recyclecard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedrecyclecard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="receipt2_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedreceipt2_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gsalesroom_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgsalesroom_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gcheckoutroom_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgcheckoutroom_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_ViewReserveListDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SHL_AvailableRooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ReadCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CancelGuestCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="errrec.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachederrrec.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="BuildingDB1DataSet.cs" />
+    <Compile Include="ADMIN_ReportClass_BONUSCLAIMED.cs" />
+    <Compile Include="Temp_DB.cs" />
+    <Compile Include="ReportClass_RoomDetail.cs" />
+    <Compile Include="guestrecorddate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedguestrecorddate.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_ReadDataCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErradjustDB.cs" />
+    <Compile Include="EmergencyCard_ReportClass.cs" />
+    <Compile Include="BankingDB.cs" />
+    <Compile Include="ADMIN_ReportClass_GSALES_MONTHLY_gsalesroom2_shl.cs" />
+    <Compile Include="ADMIN_ReportClass_ADMINTRANSACTIONS_MONTHLY.cs" />
+    <Compile Include="accguestlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccguestlist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StayingGuest_ByCurrentGInfo_ReportClass.cs" />
+    <Compile Include="roominformation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedroominformation.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="roomdetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedroomdetail.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportClass_ViewGuestTransDMS.cs" />
+    <Compile Include="ReportClass_Receipt_CancelReservation.cs" />
+    <Compile Include="Replacement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CachedReplacement.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_MainDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_CancelCardDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BackupDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="emergencycard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedemergencycard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="currentginfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedcurrentginfo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cancelcard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedcancelcard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StayingGuest_ByCurrentAccount_ReportClass.cs" />
+    <Compile Include="GuestIssuedByRoomNo_ReportClass.cs" />
+    <Compile Include="guestissuedbyroomno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedguestissuedbyroomno.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="downertrans.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cacheddownertrans.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="cancelwocard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedcancelwocard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ADMIN_ReportClass_Replacement.cs" />
+    <Compile Include="Staff_DB.cs" />
+    <Compile Include="RoomHistoryReportClass.cs" />
+    <Compile Include="ReportClass_LogInOut_Dlog.cs" />
+    <Compile Include="ReportClass_GuestIssuedByGuestID.cs" />
+    <Compile Include="ReplacementDB1DataSet.cs" />
+    <Compile Include="ModDoorLockSystem.cs" />
+    <Compile Include="gCardProperty.cs" />
+    <Compile Include="gClientProperty.cs" />
+    <Compile Include="D1.cs" />
+    <Compile Include="Form_StartDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_SHL_RoomView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DLOG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CachedDLOG.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="ADMIN_ReportClass_GCheckOutRoom.cs" />
+    <Compile Include="ADMIN_ReportClass_GCheckOut.cs" />
+    <Compile Include="accguestaccount.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccguestaccount.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StaffDataSet.cs" />
+    <Compile Include="ReportClass_Receipt_LastTrans.cs" />
+    <Compile Include="ReportClass_IssueCardHistory.cs" />
+    <Compile Include="MailingList_ReportClass.cs" />
+    <Compile Include="GTrans_View_receipt1_fields.cs" />
+    <Compile Include="GTrans_View_receipt2_fields.cs" />
+    <Compile Include="GTrans_View_paymentnote_fields.cs" />
+    <Compile Include="GTrans_View_checkoutreceipt_fields.cs" />
+    <Compile Include="Global_Data.cs" />
+    <Compile Include="ClsRoomType.cs" />
+    <Compile Include="Form_RestoreDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ReservationDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UnLockDoorByRoomNo_ReportClass.cs" />
+    <Compile Include="roomhistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedroomhistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="guestaccount.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedguestaccount.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Form_DescriptionDMS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="dtransactions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cacheddtransactions.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TransactionReport_Class.cs" />
+    <Compile Include="StayingGuest_ByRecordDate_ReportClass.cs" />
+    <Compile Include="ReportClass_ReservationList.cs" />
+    <Compile Include="mailinglist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedmailinglist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="issuedcardhistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedissuedcardhistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="guesthistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedguesthistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="gbonusroom_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedgbonusroom_shl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AccGuestAccount_ReportClass.cs" />
+    <Compile Include="AccBonusEntitle_ReportClass.cs" />
+    <Compile Include="COMM_Port_Setup1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="accsales.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccsales.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="accbonuslist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedaccbonuslist.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="unlockdoorhistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedunlockdoorhistory.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportClass_Receipt_CancelGuest.cs" />
+    <Compile Include="Replacement_DB1.cs" />
+    <Compile Include="losscard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedlosscard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="extracard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cachedextracard.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AccGuestRecordDate_ReportClass.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="SystemDataSetTableAdapters\BonusTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\Bonus1TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\Bonus2TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\Bonus3TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\Bonus4TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\Bonus5TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\Bonus6TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\BuildingTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\CountryTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\FloorTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistoryTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistory1TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistory2TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistory3TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistory4TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistory5TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\GSTHistory6TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomStatus1TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomStatus2TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomStatus3TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomStatus4TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomStatus5TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomStatus6TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\RoomTypeTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSet1TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\ZoneTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSet2TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSet3TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSet4TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSet5TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSet6TableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\SystemSetTableAdapter.cs" />
+    <Compile Include="SystemDataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="ErradjustDBDataSetTableAdapters\ErradjustTableAdapter.cs" />
+    <Compile Include="ErradjustDBDataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="BankingDBDataSetTableAdapters\BankingTableAdapter.cs" />
+    <Compile Include="BankingDBDataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\CardNoTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\CardTransTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\AllLockedRecordTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\EventLogTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\ExtraChargeTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\KeyChargesTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\LastTransTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\LockedRecordTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\LogInOutTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\ReserveTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\RoomStatusTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\UnitRefTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\ClientAccTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\ClientTableAdapter.cs" />
+    <Compile Include="BuildingDB1DataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="ReplacementDB1DataSetTableAdapters\ReplacementTableAdapter.cs" />
+    <Compile Include="ReplacementDB1DataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="StaffDataSetTableAdapters\StaffTableAdapter.cs" />
+    <Compile Include="StaffDataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccBonusEntitleListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccCurrentGByFloorNoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccCurrentGInfoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccErrorRecordsTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccExtraTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccGInfo_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccGracePeriodListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccGuestAccountTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccGuestHistoryTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccGuestListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccGuestRecordDateTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccReservationListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccRoomDetailTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccRoomInformationTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccSalesTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccTransTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AvailableRoom_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\Banking_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\BonusEntitleListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\BonusTempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\CheckRoom_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\CurrentGByFloorNoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\CurrentGInfoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\DetailGuestIssuedTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\DisplayRooms_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\DLogTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\DTransactionsTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ErrorRecordsTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ExtraTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ExtraCardTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ExtraCharge_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GData_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GDSalesTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GInfo_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GracePeriodListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GTransactions_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestAccountTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestHistoryTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestIssuedByBldNoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestIssuedByFloorNoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestIssuedByGuestIDTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestIssuedByRoomNoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GuestRecordDateTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\GViewRoom_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\IssueCardHistoryTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\KeyChargesTempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\LossCardTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\MLogTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ReceiptTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ReservationListTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\RoomDetailTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\RoomHistoryTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\RoomInformationTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\RoomTypeTempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\StaffTempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\SystemSetTempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\UnLockDoorByRoomNoTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\UnlockDoorHistoryTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\UploadDataTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\VacantStatus_TempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\ZoneTempTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\AccIssuedCardHistoryTableAdapter.cs" />
+    <Compile Include="TempDataSetTableAdapters\TableAdapterManager.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="accbonuslist.rpt" />
+    <EmbeddedResource Include="accerrrec.rpt" />
+    <EmbeddedResource Include="accgraceperiodlist.rpt" />
+    <EmbeddedResource Include="accguestaccount.rpt" />
+    <EmbeddedResource Include="accguestlist.rpt" />
+    <EmbeddedResource Include="accguestrecorddate.rpt" />
+    <EmbeddedResource Include="accmailinglist.rpt" />
+    <EmbeddedResource Include="accsales.rpt" />
+    <EmbeddedResource Include="accsalesroom.rpt" />
+    <EmbeddedResource Include="Calculation.pdf" />
+    <EmbeddedResource Include="cancelcard.rpt" />
+    <EmbeddedResource Include="cancelwocard.rpt" />
+    <EmbeddedResource Include="checkoutreceipt.rpt" />
+    <EmbeddedResource Include="COMM_Port_Setup1.resx" />
+    <EmbeddedResource Include="Copy of gbonus.rpt" />
+    <EmbeddedResource Include="currentgbyfloorno.rpt" />
+    <EmbeddedResource Include="currentginfo.rpt" />
+    <EmbeddedResource Include="dguestissued.rpt" />
+    <EmbeddedResource Include="DLOG.RPT" />
+    <EmbeddedResource Include="downertrans.rpt" />
+    <EmbeddedResource Include="dtransactions.resx" />
+    <EmbeddedResource Include="dtransactions.rpt" />
+    <EmbeddedResource Include="emergencycard.rpt" />
+    <EmbeddedResource Include="errrec.rpt" />
+    <EmbeddedResource Include="extra.rpt" />
+    <EmbeddedResource Include="extracard.rpt" />
+    <EmbeddedResource Include="Form_AdminDMS.resx" />
+    <EmbeddedResource Include="Form_AvailableRoomsDMS.resx" />
+    <EmbeddedResource Include="Form_BackupDMS.resx" />
+    <EmbeddedResource Include="Form_BankingDMS.resx" />
+    <EmbeddedResource Include="Form_Building_Setting_SHL.resx" />
+    <EmbeddedResource Include="Form_CancelCardDMS.resx" />
+    <EmbeddedResource Include="Form_CancelGuestCardDMS.resx" />
+    <EmbeddedResource Include="Form_CancelReservationDMS.resx" />
+    <EmbeddedResource Include="Form_ChangePasswordDMS.resx" />
+    <EmbeddedResource Include="Form_CreateRoomDMS.resx" />
+    <EmbeddedResource Include="Form_CreateZoneDMS.resx" />
+    <EmbeddedResource Include="Form_DescriptionDMS.resx" />
+    <EmbeddedResource Include="Form_EditDMS.resx" />
+    <EmbeddedResource Include="Form_GuestBrowserDMS.resx" />
+    <EmbeddedResource Include="Form_GuestDetailDMS.resx" />
+    <EmbeddedResource Include="Form_IRoomSetupDMS.resx" />
+    <EmbeddedResource Include="Form_IssueCardDMS.resx" />
+    <EmbeddedResource Include="Form_IssueGuestCardDMS.resx" />
+    <EmbeddedResource Include="Form_LoginDMS.resx" />
+    <EmbeddedResource Include="Form_LogReportDMS.resx" />
+    <EmbeddedResource Include="Form_MainDMS.resx" />
+    <EmbeddedResource Include="Form_MRoomsSetupDMS.resx" />
+    <EmbeddedResource Include="Form_OperationDMS.resx" />
+    <EmbeddedResource Include="Form_OtherReportsDMS.resx" />
+    <EmbeddedResource Include="Form_ReadCardDMS.resx" />
+    <EmbeddedResource Include="Form_ReadDataCardDMS.resx" />
+    <EmbeddedResource Include="Form_ReadGuestCardDMS.resx" />
+    <EmbeddedResource Include="Form_ReservationDMS.resx" />
+    <EmbeddedResource Include="Form_RestoreDMS.resx" />
+    <EmbeddedResource Include="Form_RmStatusbwr.resx" />
+    <EmbeddedResource Include="Form_Roombwr.resx" />
+    <EmbeddedResource Include="Form_RoomStatusDMS.resx" />
+    <EmbeddedResource Include="Form_RoomTypebwr.resx" />
+    <EmbeddedResource Include="Form_RoomTypeDMS.resx" />
+    <EmbeddedResource Include="Form_SearchReportDMS.resx" />
+    <EmbeddedResource Include="Form_SHL_AvailableRooms.resx" />
+    <EmbeddedResource Include="Form_SHL_RoomView.resx" />
+    <EmbeddedResource Include="Form_SHL_ViewRoomReservation.resx" />
+    <EmbeddedResource Include="Form_StaffDMS.resx" />
+    <EmbeddedResource Include="Form_StartDMS.resx" />
+    <EmbeddedResource Include="Form_SystemSettingDMS.resx" />
+    <EmbeddedResource Include="Form_TransactionReportDMS.resx" />
+    <EmbeddedResource Include="Form_ViewGuestTransDMS.resx" />
+    <EmbeddedResource Include="Form_ViewReserveListDMS.resx" />
+    <EmbeddedResource Include="Form1.resx" />
+    <EmbeddedResource Include="Form2.resx" />
+    <EmbeddedResource Include="gbonus_shl.rpt" />
+    <EmbeddedResource Include="gbonusroom.rpt" />
+    <EmbeddedResource Include="gbonusroom_shl.rpt" />
+    <EmbeddedResource Include="gcheckout.rpt" />
+    <EmbeddedResource Include="gcheckout_shl.rpt" />
+    <EmbeddedResource Include="gcheckoutroom.rpt" />
+    <EmbeddedResource Include="gcheckoutroom_shl.rpt" />
+    <EmbeddedResource Include="gsales_MTD_Nov06.rpt" />
+    <EmbeddedResource Include="gsales_shl.rpt" />
+    <EmbeddedResource Include="gsales_shl2.rpt" />
+    <EmbeddedResource Include="gsalesroom_MTD_Nov06_mod.rpt" />
+    <EmbeddedResource Include="gsalesroom_shl.rpt" />
+    <EmbeddedResource Include="gsalesroom_shl2.rpt" />
+    <EmbeddedResource Include="guestaccount.rpt" />
+    <EmbeddedResource Include="guesthistory.rpt" />
+    <EmbeddedResource Include="guestissuedbyfloorno.rpt" />
+    <EmbeddedResource Include="guestissuedbyguestid.rpt" />
+    <EmbeddedResource Include="guestissuedbyroomno.rpt" />
+    <EmbeddedResource Include="guestrecorddate.rpt" />
+    <EmbeddedResource Include="issuedcardhistory.rpt" />
+    <EmbeddedResource Include="losscard.rpt" />
+    <EmbeddedResource Include="mailinglist.rpt" />
+    <EmbeddedResource Include="MLOG.RPT" />
+    <EmbeddedResource Include="paymentnote.rpt" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="receipt1_shl.rpt" />
+    <EmbeddedResource Include="receipt2_shl.rpt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="recyclecard.rpt" />
+    <EmbeddedResource Include="Replacement.rpt" />
+    <EmbeddedResource Include="ReportForm.resx" />
+    <EmbeddedResource Include="reservationlist.rpt" />
+    <EmbeddedResource Include="roomdetail.rpt" />
+    <EmbeddedResource Include="roomhistory.rpt" />
+    <EmbeddedResource Include="roominformation.rpt" />
+    <EmbeddedResource Include="summary.rpt" />
+    <EmbeddedResource Include="unlockdoorbyroomno.rpt" />
+    <EmbeddedResource Include="unlockdoorhistory.rpt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+    <Error Condition="!Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <Import Project="packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets" Condition="Exists('packages\Stub.System.Data.SQLite.Core.NetFramework.1.0.119.0\build\net46\Stub.System.Data.SQLite.Core.NetFramework.targets')" />
+</Project>
